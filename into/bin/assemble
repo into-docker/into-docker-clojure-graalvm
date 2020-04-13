@@ -2,4 +2,5 @@
 
 set -eu
 
+mkdir -p /opt/app
 mv $INTO_ARTIFACT_DIR/run /opt/app/run
