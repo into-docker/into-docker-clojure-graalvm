@@ -10,6 +10,6 @@ echo "Building Binary ..."
 $GRAALVM_HOME/bin/native-image \
       --no-server \
       --no-fallback \
-      -jar target/*-standalone.jar" \
+      -jar target/*-standalone.jar \
       -H:Name="$INTO_ARTIFACT_DIR/run" \
       "$@"
