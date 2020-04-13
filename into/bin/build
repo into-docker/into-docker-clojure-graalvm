@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+echo "Building Uberjar ..."
+cd $INTO_SOURCE_DIR
+lein uberjar
+
+echo "Building Binary ..."
+$GRAALVM_HOME/bin/native-image \
+      --no-server \
+      --no-fallback \
+      -jar target/*-standalone.jar" \
+      -H:Name="$INTO_ARTIFACT_DIR/run" \
+      "$@"

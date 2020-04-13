@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -eu
+
+mv $INTO_ARTIFACT_DIR/run /opt/app/run
