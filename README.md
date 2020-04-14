@@ -19,7 +19,8 @@ into -t <repository>:<tag> intodocker/clojure-graalvm .
 ```
 
 Please make sure that your Uberjar contains all necessary configuration files at
-`META-INF/native-image/**/` as described [here][native-image-configuration].
+`META-INF/native-image/<groupId>/<artifactId>` as described
+[here][native-image-configuration].
 
 [native-image-configuration]: https://www.graalvm.org/docs/reference-manual/native-image/#native-image-configuration
 
