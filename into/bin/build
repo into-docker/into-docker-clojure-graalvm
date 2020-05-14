@@ -6,11 +6,16 @@ echo "Building uberjar ..."
 cd $INTO_SOURCE_DIR
 lein uberjar
 
-echo "Building static binary ..."
+echo "Building native image ..."
 $GRAALVM_HOME/bin/native-image \
       -jar target/*-standalone.jar \
-      -H:Name="$INTO_ARTIFACT_DIR/run" \
+      -H:Name="$INTO_ARTIFACT_DIR/tmp/run" \
       --no-server \
       --no-fallback \
+      ${NATIVE_IMAGE_PARAMS} \
       --static \
       "$@"
+
+echo "Moving binary to artifact directory ..."
+mv "$INTO_ARTIFACT_DIR/tmp/run" "$INTO_ARTIFACT_DIR/run"
+rm -r "$INTO_ARTIFACT_DIR/tmp"
