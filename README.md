@@ -15,7 +15,7 @@ This is an [into-docker][into] builder image for Clojure applications relying on
 Run the following in the root directory of your Clojure project:
 
 ```sh
-into -t <repository>:<tag> intodocker/clojure-graalvm .
+into build -t <repository>:<tag> intodocker/clojure-graalvm .
 ```
 
 Please make sure that your Uberjar contains all necessary configuration files at
@@ -28,6 +28,15 @@ Please make sure that your Uberjar contains all necessary configuration files at
 
 Make sure your project's `uberjar` task creates its output at
 `target/*-standalone.jar` since this is where the builder image will expect it.
+
+## Build Profiles
+
+The following build profiles that can be used via the `--profile` CLI flag:
+
+| Profile   | Native Image Flags                   | Notes                         |
+| --------- | ------------------------------------ | ----------------------------- |
+| `default` | `--no-server --no-fallback --static` |                               |
+| `dynamic` | `--no-server --no-fallback`          | Only with `--write-artifacts` |
 
 ## License
 
