@@ -17,5 +17,5 @@ $GRAALVM_HOME/bin/native-image \
       "$@"
 
 echo "Moving binary to artifact directory ..."
-mv "$INTO_ARTIFACT_DIR/tmp/run" "$INTO_ARTIFACT_DIR/run"
+mv "$INTO_ARTIFACT_DIR/tmp/run" "$INTO_ARTIFACT_DIR/graalvm-native-image"
 rm -r "$INTO_ARTIFACT_DIR/tmp"

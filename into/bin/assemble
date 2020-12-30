@@ -3,4 +3,4 @@
 set -eu
 
 mkdir -p /opt/app
-mv $INTO_ARTIFACT_DIR/run /opt/app/run
+mv $INTO_ARTIFACT_DIR/graalvm-native-image /opt/app/run

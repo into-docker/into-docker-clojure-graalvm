@@ -1,5 +1,5 @@
-FROM clojure:lein-2.9.1 AS lein
-FROM oracle/graalvm-ce:20.0.0-java11 AS graalvm
+FROM clojure:lein-2.9.5 AS lein
+FROM oracle/graalvm-ce:20.3.0-java11 AS graalvm
 
 ARG USER="builder"
 
