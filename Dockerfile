@@ -19,8 +19,8 @@ RUN gu install native-image
 COPY --from=lein /usr/local/bin/lein /usr/local/bin/lein
 COPY --from=lein /root/.lein /root/.lein
 COPY --from=lein /root/.m2 /root/.m2
-COPY --from=lein /usr/share/java/leiningen-2.9.1-standalone.jar \
-                 /usr/share/java/leiningen-2.9.1-standalone.jar
+COPY --from=lein /usr/share/java/leiningen-2.9.5-standalone.jar \
+                 /usr/share/java/leiningen-2.9.5-standalone.jar
 
 WORKDIR /into
 ENV HOME="/into/home" LEIN_JVM_OPTS="-Duser.home=/into/home"
